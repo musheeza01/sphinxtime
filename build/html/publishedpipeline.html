@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Published Pipeline in Flare &mdash; ligadata  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Deployed Pipelines in Flare" href="deployedpipeline.html" />
+    <link rel="prev" title="Pipeline Pending Approval" href="pipelinepending.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ligadata
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overviewflare.html">Flare Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workspace.html">Workspace &amp; Local Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelines.html">Pipelines in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localpipeline.html">Local Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelinepending.html">Pipeline Pending Approval</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Published Pipeline in Flare</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploy-pipeline">Deploy Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-pipeline-history">View Pipeline History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#import-pipeline">Import Pipeline</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import-latest-version-of-pipeline">Import Latest Version of Pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-previous-version-of-pipeline">Import Previous Version of Pipeline</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#copy-pipeline">Copy Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-published-pipeline">Delete Published Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting-published-pipelines">Troubleshooting Published Pipelines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#error-failed-to-retrieve-published-pipeline">Error: Failed to retrieve published pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-external-api-returned-an-error-failed-to-add-pipeline">Error: External Api returned an error: Failed to add pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-incompatible-environment-cant-deploy-pipeline">Error: Incompatible environment, can’t deploy pipeline.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-invalid-connection-name">Error: Invalid connection name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-this-pipeline-can-t-be-deleted-as-it-has-been-deployed">Error: This pipeline can’t be deleted as it has been deployed</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployedpipeline.html">Deployed Pipelines in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelinetesting.html">Pipelines in Testing In Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schemas in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories.html">Categories in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users.html">User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendixa.html">Appendix A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendixb.html">Appendix B</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ligadata</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Published Pipeline in Flare</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/publishedpipeline.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="published-pipeline-in-flare">
+<span id="publishedpipeline"></span><h1>Published Pipeline in Flare<a class="headerlink" href="#published-pipeline-in-flare" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>The published pipelines view within LigaData Flare displays a list of pipelines that have been approved and and ready to be deployed.</p>
+<p>To access the published pipelines section, select <strong>Published Pipelines</strong> from the main menu. The following view will appear on the screen.</p>
+<figure class="align-center">
+<img alt="_images/publishedpipelinehome.png" src="_images/publishedpipelinehome.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you do not see these options, you might not have the relevant permissions. For more details, check with your administrator.</p>
+</div>
+</section>
+<section id="deploy-pipeline">
+<h2>Deploy Pipeline<a class="headerlink" href="#deploy-pipeline" title="Permalink to this heading"></a></h2>
+<p>To deploy a published pipeline, follow the steps below:</p>
+<ol class="arabic">
+<li><p>Click on the <strong>Deploy</strong> button under the <strong>Actions</strong> column, corresponding to the pipeline to be tested. A dialog box will appear on the screen.</p></li>
+<li><p>Configure the following values for testing:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><strong>Version:</strong> Select the pipeline version to be deployed</p></li>
+<li><p><strong>Environment:</strong> Select the production environment in which the pipeline needs to be deployed. This is a critical step as it will define the connections, caches and the parameters that the pipeline can utilize.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the selected environment has no parameters defined, then the parameters/values configures for the selected pipeline will take precedence.</p>
+</div>
+<p>3. Once done, hit the Deploy button.
+The pipeline will be added to the Deployed Pipelines page.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>For more information, refer to the <a class="reference internal" href="deployedpipeline.html#deployedpipeline"><span class="std std-ref">Deployed Pipelines</span></a> section.</p>
+</div>
+</section>
+<section id="view-pipeline-history">
+<h2>View Pipeline History<a class="headerlink" href="#view-pipeline-history" title="Permalink to this heading"></a></h2>
+<p>The history icon in Flare displays the list of pipeline versions that exist for the corresponding pipeline. Pipeline versions are created as a result of first, <strong>importing</strong> a certain pipeline and then <strong>publishing</strong> it once again. Repeating this process will result with an increment of the pipeline version.</p>
+<p>To view the previous versions of a pipeline, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the <strong>History</strong> icon under the <strong>Actions</strong> column, corresponding to the pipeline for which the version history needs to be viewed. The following page will appear on the screen with clickable version numbers.</p></li>
+</ol>
+<figure class="align-center">
+<img alt="_images/history.png" src="_images/history.png" />
+</figure>
+<p>2. Click on the version number that needs to be viewed.
+The pipeline designer view will appear on the screen displaying the pipeline structure and data flows in the selected version.</p>
+</section>
+<section id="import-pipeline">
+<h2>Import Pipeline<a class="headerlink" href="#import-pipeline" title="Permalink to this heading"></a></h2>
+<p>Using Flare, you can import the current or any previous version of the pipeline, back into the workspace.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>A previously imported pipeline cannot be reimported to the same workspace.</p>
+</div>
+<section id="import-latest-version-of-pipeline">
+<h3>Import Latest Version of Pipeline<a class="headerlink" href="#import-latest-version-of-pipeline" title="Permalink to this heading"></a></h3>
+<p>Under the <strong>Latest Version</strong> column, you’ll notice the number of versions of the pipelines where the latest will be considered when importing or duplicating it.</p>
+<p>To import a pipeline, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the <strong>Import</strong> button under the <strong>Actions</strong> column, corresponding to the pipeline to be imported. A dialog box will appear on the screen.</p></li>
+<li><p>Select the workspace from the dropdown, in which the pipeline needs to be imported.</p></li>
+</ol>
+<p>3. Click on the <strong>Import</strong> button to proceed.
+The pipeline will be successfully imported as a local pipeline with the same name in the selected workspace.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the imported pipeline is published, it will be done so as a <strong>new version</strong> of the original pipeline.</p>
+</div>
+</section>
+<section id="import-previous-version-of-pipeline">
+<h3>Import Previous Version of Pipeline<a class="headerlink" href="#import-previous-version-of-pipeline" title="Permalink to this heading"></a></h3>
+<p>To import a previous version of the pipeline, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the <strong>History</strong> icon under the <strong>Actions</strong> column, corresponding to the pipeline for which the previous version needs to be imported. The pipeline versions page will appear on the screen.</p></li>
+<li><p>Click on the <strong>Import</strong> button under the <strong>Actions</strong> column, corresponding to the version number to be imported. A dialog box will appear on the screen.</p></li>
+</ol>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>To view the pipeline before importing it, click on the relevant version number. The pipeline will open up in the pipeline designer view.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Select the workspace from the dropdown, in which the pipeline needs to be imported.</p></li>
+</ol>
+<p>4. Click on the Import button to proceed.
+The selected version of the pipeline will be successfully imported as a local pipeline with the same name in the selected workspace.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the imported pipeline is published, it will be done so as a new version of the original pipeline.</p>
+</div>
+</section>
+</section>
+<section id="copy-pipeline">
+<h2>Copy Pipeline<a class="headerlink" href="#copy-pipeline" title="Permalink to this heading"></a></h2>
+<p>To create a duplicate of a pipeline, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the <strong>Copy</strong> icon under the <strong>Actions</strong> column, corresponding to the pipeline that needs to be copied. A dialog box will appear on the screen.</p></li>
+<li><p>Select the workspace from the dropdown, in which the pipeline needs to be copied.</p></li>
+</ol>
+<p>3. Click on the <strong>Duplicate</strong> button to proceed.
+A copy of the pipeline will be created in the selected workspace as a local pipeline.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>The naming convention of the duplicate pipeline consists of the original name followed by <strong>_copy</strong> as a suffix.</p>
+</div>
+</section>
+<section id="delete-published-pipeline">
+<h2>Delete Published Pipeline<a class="headerlink" href="#delete-published-pipeline" title="Permalink to this heading"></a></h2>
+<p>To delete a published pipeline, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the delete icon corresponding to the pipeline to be deleted. A dialog box will appear on the screen.</p></li>
+<li><p>Click on the Confirm button to proceed.</p></li>
+</ol>
+<p>The published pipeline will be deleted successfully.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>A deployed pipeline cannot be deleted unless it is undeployed. For more information, refer to the <strong>Troubleshooting Published Pipelines</strong> section below.</p>
+</div>
+</section>
+<section id="troubleshooting-published-pipelines">
+<h2>Troubleshooting Published Pipelines<a class="headerlink" href="#troubleshooting-published-pipelines" title="Permalink to this heading"></a></h2>
+<p>While working with published pipelines, you might come across some errors while performing certain actions. In this section, you will see the errors associated with published pipelines along with the remediation steps.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To customize the error messages, refer to the <a class="reference internal" href="Appendixb.html#appendixb"><span class="std std-ref">Appendix B</span></a> Customization.</p>
+</div>
+<section id="error-failed-to-retrieve-published-pipeline">
+<h3>Error: Failed to retrieve published pipeline<a class="headerlink" href="#error-failed-to-retrieve-published-pipeline" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong> You may come across this error when trying to import a published pipeline to a workspace.</p></li>
+<li><p><strong>Possible Solution:</strong></p></li>
+</ul>
+</section>
+<section id="error-external-api-returned-an-error-failed-to-add-pipeline">
+<h3>Error: External Api returned an error: Failed to add pipeline<a class="headerlink" href="#error-external-api-returned-an-error-failed-to-add-pipeline" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong> You may come across this error when trying to deploy a published pipeline.</p></li>
+<li><p><strong>Possible Solution:</strong></p></li>
+</ul>
+</section>
+<section id="error-incompatible-environment-cant-deploy-pipeline">
+<h3>Error: Incompatible environment, can’t deploy pipeline.<a class="headerlink" href="#error-incompatible-environment-cant-deploy-pipeline" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong> You may come across this error when trying to deploy a published pipeline.</p></li>
+<li><p><strong>Possible Solution:</strong> Revisit the production environment configuration in which the pipeline needs to be deployed.</p></li>
+</ul>
+</section>
+<section id="error-invalid-connection-name">
+<h3>Error: Invalid connection name<a class="headerlink" href="#error-invalid-connection-name" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong> You may come across this error when trying to deploy a published pipeline.</p></li>
+<li><p><strong>Possible Solution:</strong> Revisit the connection settings for the production environment in which the pipeline needs to be deployed.</p></li>
+</ul>
+</section>
+<section id="error-this-pipeline-can-t-be-deleted-as-it-has-been-deployed">
+<h3>Error: This pipeline can’t be deleted as it has been deployed<a class="headerlink" href="#error-this-pipeline-can-t-be-deleted-as-it-has-been-deployed" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong> You may come across this error when trying to deleted a published pipeline that has been deployed.</p></li>
+<li><p><strong>Possible Solution:</strong> Undeploy the pipeline from the Deployed Pipelines page and try to delete the pipeline again.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pipelinepending.html" class="btn btn-neutral float-left" title="Pipeline Pending Approval" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="deployedpipeline.html" class="btn btn-neutral float-right" title="Deployed Pipelines in Flare" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Musheeza.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

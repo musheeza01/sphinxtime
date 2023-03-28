@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Pipeline &mdash; ligadata  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Pipeline Pending Approval" href="pipelinepending.html" />
+    <link rel="prev" title="Pipelines in Flare" href="pipelines.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ligadata
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overviewflare.html">Flare Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workspace.html">Workspace &amp; Local Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelines.html">Pipelines in Flare</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Local Pipeline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-local-pipeline">Create Local Pipeline</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pipeline-designer">Pipeline designer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pipeline-designer-shortcuts">Pipeline Designer Shortcuts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pipeline-design-rules">Pipeline Design Rules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pipeline-settings">Pipeline Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#info">Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#origin-data-schema">Origin Data Schema</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#predefined-schema">Predefined Schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extracted-schema">Extracted Schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#define-schema">Define Schema</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rejects">Rejects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schedule">Schedule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-local-pipeline">Test Local Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#request-pipeline-publish">Request Pipeline Publish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#copy-local-pipeline">Copy Local Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-local-pipeline">Delete Local Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting-local-pipeline">Troubleshooting Local Pipeline</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#error-external-api-returned-an-error-failed-to-add-pipeline">Error: External API returned an error: Failed to add pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-cant-test-this-pipeline-because-there-is-a-pipeline-with-the-same-name">Error: Can’t test this pipeline because there is a pipeline with the same name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-sql-query-contains-tblname-parameter-but-table-name-is-empty">Error: Sql query contains {tblName} parameter but table name is empty</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pipelinepending.html">Pipeline Pending Approval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publishedpipeline.html">Published Pipeline in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployedpipeline.html">Deployed Pipelines in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelinetesting.html">Pipelines in Testing In Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schemas in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories.html">Categories in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users.html">User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendixa.html">Appendix A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendixb.html">Appendix B</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ligadata</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Local Pipeline</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/localpipeline.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="local-pipeline">
+<span id="localpipeline"></span><h1>Local Pipeline<a class="headerlink" href="#local-pipeline" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>The local pipelines view displays the list of pipelines available locally that is yet to be tested, published and deployed.</p>
+<p>The following are the potential source of local pipelines that are displayed in the local pipelines page as shown in the screenshot below:</p>
+<ul>
+<li><p><strong>New Pipeline:</strong> All new pipelines created from the Local Pipeline section can be viewed here</p></li>
+<li><p><strong>Pending Pipelines:</strong> The pipelines for which the publication request is declined are also listed here</p></li>
+<li><p><strong>Published Pipelines:</strong> The following pipelines can be viewed in this section:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The pipelines duplicated from the published pipelines section</p></li>
+<li><p>The pipelines imported from the published pipelines section</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Pipelines in Testing:</strong> The undeployed pipelines put into test from the local pipelines section are listed back here</p></li>
+</ul>
+<p>Once you login to LigaData Flare and configure the necessary settings, the first step of the pipeline creation process is creating a local pipeline. A local pipeline lets you access the pipeline designer to create one from scratch.</p>
+<p>To access the local pipelines section, select <strong>Workspaces &amp; Local Pipelines</strong> from the main menu and click on the relevant workspace. The local pipeline page will appear on the screen.</p>
+<figure class="align-center">
+<img alt="_images/localpipelinehome.png" src="_images/localpipelinehome.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you do not see these options, you might not have the relevant permissions. For more details, check with your administrator.</p>
+</div>
+</section>
+<section id="create-local-pipeline">
+<h2>Create Local Pipeline<a class="headerlink" href="#create-local-pipeline" title="Permalink to this heading"></a></h2>
+<p>To create a local pipeline, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Select the Workspace in which the pipeline need to be created. The Local Pipelines page corresponding to that workspace will appear on the screen.</p></li>
+<li><p>Click on the + Create New Pipeline button located at the top right corner of the UI. A dialog box will appear on the screen.</p></li>
+<li><p>Specify the following information:</p></li>
+</ol>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Specify a unique name of the pipeline.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Description</p></td>
+<td><p>Provide a brief description of the pipeline.</p></td>
+</tr>
+<tr class="row-even"><td><p>Categories</p></td>
+<td><p>Specify the category the pipeline should be associated with.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Environment</p></td>
+<td><p>Select the development environment from the dropdown, in which the pipeline needs to be created. This is a critical step as it will define the connections, caches and the parameters that the pipeline can utilize.</p></td>
+</tr>
+<tr class="row-even"><td><p>Type</p></td>
+<td><dl class="simple">
+<dt>Select the type of pipeline from the dropdown. Currently, the following types are supported:</dt><dd><ul class="simple">
+<li><p><strong>Data Pipeline:</strong> Regular data pipeline</p></li>
+<li><p><strong>Cache Pipeline:</strong> Pipeline used to define caches</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Environment</p></td>
+<td><p>Specify the keywords to be associated with the pipeline, that can be used later to search the pipeline</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="4">
+<li><p>Click on the Create button.</p></li>
+</ol>
+<p>The pipeline will be created successfully.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Once defined, the pipeline type i.e, data or cache pipeline cannot be edited later.</p>
+</div>
+<p>Once the pipeline has been created, the next step is to configure the pipeline and the data flow in the pipeline designer.</p>
+<section id="pipeline-designer">
+<h3>Pipeline designer<a class="headerlink" href="#pipeline-designer" title="Permalink to this heading"></a></h3>
+<p>Once a local pipeline has been successfully created, you will be redirected to the Pipeline Designer page to build the pipeline.</p>
+<p>LigaData Flare provides a drag and drop style canvas that allows you to pick the nodes/stages to be included from the right pane and place it where it needs to be in the pipeline.</p>
+<p>It gives you the full authority to define how data must flow from origin to destination and how it must be processed along the way.</p>
+<figure class="align-center">
+<img alt="_images/pipelinedesigner.png" src="_images/pipelinedesigner.png" />
+</figure>
+<p>Before you begin configuring the data flow, it is important to get familiar with the UI of the pipeline designer.</p>
+<p>The top right section of the UI contains the following features:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipelines</p></td>
+<td><p>Located at the top left corner of the UI. Clicking on it takes you back to the local pipelines page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Show DSL</p></td>
+<td><p>Displays the pipeline in code format. You can also copy and download the code using this option.
+<strong>Note</strong>
+The pipeline design must be free of any errors/warnings to be able to view the code.</p></td>
+</tr>
+<tr class="row-even"><td><p>Pipelines</p></td>
+<td><dl class="simple">
+<dt>Lets you create and manage various data flows in the form of pipelines. LigaData Flare offers the following pipeline specific views:</dt><dd><ul class="simple">
+<li><p>Workspaces &amp; Local Pipelines</p></li>
+<li><p>Pending Pipelines Approval</p></li>
+<li><p>Published Pipelines</p></li>
+<li><p>Deployed Pipelines</p></li>
+<li><p>Pipelines in Testing</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Undo</p></td>
+<td><p>Reverses the change made</p></td>
+</tr>
+<tr class="row-even"><td><p>Redo</p></td>
+<td><p>Performs the change again</p></td>
+</tr>
+<tr class="row-odd"><td><p>Delete</p></td>
+<td><p>To enable the delete option, click on the node to be deleted. Then hit the delete icon to remove the selected node from the pipeline</p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Errors</p></td>
+<td><dl>
+<dt>Displays the errors in the pipeline and highlights any missing configuration in the nodes</dt><dd><ul class="simple">
+<li><p><strong>Origins:</strong> The datasource to be used for retrieving data in the pipeline</p></li>
+<li><p><strong>Processors:</strong> The type of processor to be used for data processing as per your use case</p></li>
+<li><p><strong>Segments:</strong> The predefined pipeline segments with preconfigured settings that can be reused while designing a pipeline</p></li>
+<li><p><strong>Destinations:</strong> The target node to which the data will be sent towards the end of the pipeline</p></li>
+</ul>
+<p>Selecting a data node type from the drop down located at the top right corner of the screen, populates the relevant nodes corresponding to thatcategory</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Data Node Type</p></td>
+<td><dl class="simple">
+<dt>Displays the type of data nodes available. This includes:</dt><dd><ul class="simple">
+<li><p>Info</p></li>
+<li><p>Origin Data Schema</p></li>
+<li><p>Parameters</p></li>
+<li><p>Rejects</p></li>
+<li><p>Schedule</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>For detailed information about the data nodes, refer to the <strong>Stage documentation</strong> section.</p>
+</div>
+<p>As you land on the pipeline designer, the first step is to configure the pipeline details. Refer to the relevant section below to view the details to be specified in each configuration tab.</p>
+<section id="pipeline-designer-shortcuts">
+<h4>Pipeline Designer Shortcuts<a class="headerlink" href="#pipeline-designer-shortcuts" title="Permalink to this heading"></a></h4>
+<p>While configuring the local pipeline and populating the fields, the following shortcuts can be used to auto-retrieve functions, parameters and context attributes.</p>
+<p>To see it in action, click on the text field in one of the properties panel tab and press the shortcut key(s).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Shortcut</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ctrl/cmd + space</p></td>
+<td><p>Displays the list of functions</p></td>
+</tr>
+<tr class="row-odd"><td><p>$</p></td>
+<td><p>Displays the list of predefined pipeline parameters. They can be defined from, the <strong>Parameters</strong> tab</p></td>
+</tr>
+<tr class="row-even"><td><p>&#64;</p></td>
+<td><p>Displays the list of pipeline attributes.
+<strong>Note</strong>
+Attributes are subject to change after applying certain processors such as Attribute Renamer, Attribute Remover &amp; Enrich (adding new attributes).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pipeline-design-rules">
+<h4>Pipeline Design Rules<a class="headerlink" href="#pipeline-design-rules" title="Permalink to this heading"></a></h4>
+<p>Once the pipeline has been configured successfully, the next step is to drag and drop the required data nodes and configure the connections. While doing so, the following rules must be kept in mind:</p>
+<ol class="arabic simple">
+<li><p>All pipelines must have atleast 1 origin and 1 destination node.</p></li>
+<li><p>All input and output ports must be connected.</p></li>
+<li><p>No individual node must be left unconnected.</p></li>
+</ol>
+</section>
+<section id="pipeline-settings">
+<h4>Pipeline Settings<a class="headerlink" href="#pipeline-settings" title="Permalink to this heading"></a></h4>
+<p>Once the pipeline has been created, it is important that its settings are configured properly. To do so, the fields in the following tabs need to be populated:</p>
+<ul class="simple">
+<li><p>Info</p></li>
+<li><p>Origin data schema</p></li>
+<li><p>Parameters</p></li>
+<li><p>Rejects</p></li>
+<li><p>Schedule</p></li>
+</ul>
+<p>A brief description of each is shared below:</p>
+</section>
+</section>
+<section id="info">
+<h3>Info<a class="headerlink" href="#info" title="Permalink to this heading"></a></h3>
+<p>The information tab displays all the essential information configured while creating the local pipeline. Any edits required in the pipeline settings can be made here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The fields in this section are pre-populated depending on the values entered while creating the local pipeline.</p>
+</div>
+</section>
+<section id="origin-data-schema">
+<h3>Origin Data Schema<a class="headerlink" href="#origin-data-schema" title="Permalink to this heading"></a></h3>
+<p>The origin data schema tab allows you to specify the schema of the origin data source when designing the pipeline. In order to begin, first you need to specify the type of schema you would like to proceed with. This can be one of the following:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Schema Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Predefined Schema</p></td>
+<td><p>Allows you to select from one of the existing and predefined schemas within LigaData Flare. It can be added from the <strong>Schemas</strong> section.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Extracted Schema</p></td>
+<td><p>Allows you to extract the schema from the source data system</p></td>
+</tr>
+<tr class="row-even"><td><p>Define Schema</p></td>
+<td><p>Allows you to define the schema right away</p></td>
+</tr>
+</tbody>
+</table>
+<p>To view the fields required to be configured for each schema type, refer to its corresponding section below.</p>
+<section id="predefined-schema">
+<h4>Predefined Schema<a class="headerlink" href="#predefined-schema" title="Permalink to this heading"></a></h4>
+<p>LigaData Flare allows you to define schemas in the <a class="reference internal" href="schemas.html#schemas"><span class="std std-ref">Schemas</span></a> section. These predefined schemas can be called while defining the origin data schema.</p>
+<p>To configure this schema, provide the following information:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Schema Name</p></td>
+<td><p>Select the schema from the dropdown</p></td>
+</tr>
+<tr class="row-odd"><td><p>Primary Key</p></td>
+<td><p>Select one of the attributes as the primary key from the dropdown to be associated with the schema</p></td>
+</tr>
+<tr class="row-even"><td><p>Constraints</p></td>
+<td><p>To add a constraint or say filter/condition, click on the plus icon and provide the following information:</p></td>
+</tr>
+<tr class="row-odd"><td><p>Last Modified</p></td>
+<td><dl class="simple">
+<dt>Specifies the timestamp when the directory was last updated or modified</dt><dd><ul class="simple">
+<li><p>Name: Specify the name of the constraint</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To delete a constraint, click on the minus icon corresponding to that constraint.</p>
+</div>
+</section>
+<section id="extracted-schema">
+<h4>Extracted Schema<a class="headerlink" href="#extracted-schema" title="Permalink to this heading"></a></h4>
+<p>LigaData Flare allows you to extract the schema from the source data system.</p>
+<p>To configure this schema, provide the following information:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Origin</p></td>
+<td><p>From the dropdown list of origin datasoruces dragged to and available in the canvas, select the datasource from which the schema needs to be extracted and hit the Extract button</p></td>
+</tr>
+<tr class="row-odd"><td><p>Attribute</p></td>
+<td><dl class="simple">
+<dt>To add an attribute or say data field, click on the plus icon and provide the following information:</dt><dd><ul class="simple">
+<li><p><strong>Name:</strong> Specify the name of the attribute</p></li>
+<li><p><strong>Type:</strong> Specify the type of the attribute from the dropdown</p></li>
+<li><p><strong>Format:</strong> Specify the format of the attribute. For example, if the attribute is a date, the format could be dd-mm-yyyy, mm/dd/yy or some other format as per your use case</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>Primary Key</p></td>
+<td><p>Select one of the attributes as the primary key from the dropdown to be associated with the schema</p></td>
+</tr>
+<tr class="row-odd"><td><p>COnstraint</p></td>
+<td><dl class="simple">
+<dt>To add a constraint or say filter/condition, click on the plus icon and provide the following information:</dt><dd><ul class="simple">
+<li><p><strong>Name:</strong> Specify the name of the constraint</p></li>
+<li><p><strong>Expression:</strong> Provide the expression. It can be either in regex format, a mathematical/logical operation or a function call</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To delete a constraint/attribute, click on the minus icon corresponding to that constraint/attribute.</p>
+</div>
+</section>
+<section id="define-schema">
+<h4>Define Schema<a class="headerlink" href="#define-schema" title="Permalink to this heading"></a></h4>
+<p>To configure this schema, provide the following information:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Attribute</p></td>
+<td><dl class="simple">
+<dt>To add an attribute or say data field, click on the plus icon and provide the following information:</dt><dd><ul class="simple">
+<li><p><strong>Name:</strong> Specify the name of the attribute</p></li>
+<li><p><strong>Type:</strong> Specify the type of the attribute from the dropdown</p></li>
+<li><p><strong>Format:</strong> Specify the format of the attribute. For example, if the attribute is a date, the format could be dd-mm-yyyy, mm/dd/yy or some other format as per your use case</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Primary Key</p></td>
+<td><p>Select one of the attributes as the primary key from the dropdown to be associated with the schema</p></td>
+</tr>
+<tr class="row-even"><td><p>COnstraint</p></td>
+<td><dl class="simple">
+<dt>To add a constraint or say filter/condition, click on the plus icon and provide the following information:</dt><dd><ul class="simple">
+<li><p><strong>Name:</strong> Specify the name of the constraint</p></li>
+<li><p><strong>Expression:</strong> Provide the expression. It can be either in regex format, a mathematical/logical operation or a function call</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To delete a constraint/attribute, click on the minus icon corresponding to that constraint/attribute.</p>
+</div>
+</section>
+</section>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
+<p>To add a parameter, provide the following information:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Specify the name of the parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>Value</p></td>
+<td><p>Specify the value of the parameter</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Specify the description of the parameter</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rejects">
+<h3>Rejects<a class="headerlink" href="#rejects" title="Permalink to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tab is not available for Cache Pipelines.</p>
+</div>
+<p>To configure rejects, provide the following information:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Directory Template</p></td>
+<td><p>Specify the directory path to write the rejects to</p></td>
+</tr>
+<tr class="row-odd"><td><p>File Prefix</p></td>
+<td><p>Specify the file prefix</p></td>
+</tr>
+<tr class="row-even"><td><p>File Suffix</p></td>
+<td><p>Specify the file suffix</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Format</p></td>
+<td><p>Specify the format of rejects file from the dropdown</p></td>
+</tr>
+<tr class="row-even"><td><p>Attribute Delimiter</p></td>
+<td><p>Specify the character used to separate items in the file</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="schedule">
+<h3>Schedule<a class="headerlink" href="#schedule" title="Permalink to this heading"></a></h3>
+<p>To run the pipeline on a one time basis or periodically, configure the following options:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 92%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>None</p></td>
+<td><p>Selecting this option creates a pipeline but never applies it to the selected objects. This option can be used if you don’t want to activate the pipeline immediately</p></td>
+</tr>
+<tr class="row-odd"><td><p>Once</p></td>
+<td><p>Selecting this option runs this pipeline only once</p></td>
+</tr>
+<tr class="row-even"><td><p>Repeat</p></td>
+<td><p>Selecting this option allows you to run the pipeline periodically</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date &amp; Time</p></td>
+<td><p>Specify the date and time when the pipeline should be executed</p></td>
+</tr>
+<tr class="row-even"><td><p>Repeat Every</p></td>
+<td><p>Specify the frequency of the pipeline in days, weeks or years</p></td>
+</tr>
+<tr class="row-odd"><td><p>Repeat On</p></td>
+<td><p>Specify the days on which the pipeline should be executed</p></td>
+</tr>
+<tr class="row-even"><td><p>Ends at</p></td>
+<td><p>Specify when should the pipeline execution end</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To learn about node configurations, refer to the <strong>Stage documentation</strong> section.</p>
+</div>
+</section>
+</section>
+<section id="test-local-pipeline">
+<h2>Test Local Pipeline<a class="headerlink" href="#test-local-pipeline" title="Permalink to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The pipeline must not have the warning sign next to its name and be free of any errors to be eligible for testing.</p>
+</div>
+<p>To place a pipeline publish request, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the <strong>Test</strong> button corresponding to the pipeline to be tested. A dialog box will appear on the screen.</p></li>
+<li><p>Select the development environment in which the pipeline needs to be deployed for testing. This is a critical step as it will define the connections, caches and the parameters that the pipeline can utilize.</p></li>
+</ol>
+<p>3. Click on the <strong>Deploy</strong> button to proceed.
+The pipeline will be successfully deployed for testing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The pipelines deployed for testing can be viewed in the <a class="reference internal" href="pipelinetesting.html#pipelinetesting"><span class="std std-ref">Pipelines in Testing</span></a> page.</p>
+</div>
+</section>
+<section id="request-pipeline-publish">
+<h2>Request Pipeline Publish<a class="headerlink" href="#request-pipeline-publish" title="Permalink to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The pipeline must not have the warning sign next to it and be free of any errors to be eligible for pipeline publish request.</p>
+</div>
+<p>To place a pipeline publish request, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the <strong>Publish</strong> button corresponding to the pipeline to be published. A dialog box will appear on the screen.</p></li>
+<li><p>Provide details for why the pipeline needs to be published as a note. This is an optional step.</p></li>
+</ol>
+<p>3. Click on the <strong>Confirm</strong> button to proceed.
+A toast message will appear on the screen indicating that a notification will be sent to you once the pipeline request is processed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The pipelines requested for publishing can be viewed in the <a class="reference internal" href="pipelinepending.html#pipelinepending"><span class="std std-ref">Pipelines Pending Approval</span></a>  page.</p></li>
+<li><p>You cannot edit the pipeline once the pipeline publication request has been placed.</p></li>
+</ul>
+</div>
+</section>
+<section id="copy-local-pipeline">
+<h2>Copy Local Pipeline<a class="headerlink" href="#copy-local-pipeline" title="Permalink to this heading"></a></h2>
+<p>To copy a local pipeline, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the copy icon corresponding to the pipeline to be copied. A dialog box will appear on the screen.</p></li>
+<li><p>Click on the Confirm button to proceed.</p></li>
+</ol>
+<p>The pipeline will be copied successfully.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>The naming convention of the duplicate pipeline consists of the original name followed by <strong>_copy</strong> as a suffix.</p>
+</div>
+</section>
+<section id="delete-local-pipeline">
+<h2>Delete Local Pipeline<a class="headerlink" href="#delete-local-pipeline" title="Permalink to this heading"></a></h2>
+<p>To delete a local pipeline, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the delete icon corresponding to the pipeline to be deleted. A dialog box will appear on the screen.</p></li>
+</ol>
+<p>2. Click on the <strong>Confirm</strong> button to proceed.
+The pipeline will be deleted successfully.</p>
+</section>
+<section id="troubleshooting-local-pipeline">
+<h2>Troubleshooting Local Pipeline<a class="headerlink" href="#troubleshooting-local-pipeline" title="Permalink to this heading"></a></h2>
+<p>While working with local pipelines, you might come across some errors while performing certain actions. In this section, you will see the errors associated with local pipelines along with the remediation steps.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>The error messages mentioned in this section are set by default and can be modified by editing the JSON file. To customize the error messages, refer to the <a class="reference internal" href="Appendixb.html#appendixb"><span class="std std-ref">Appendix B</span></a></p>
+</div>
+<section id="error-external-api-returned-an-error-failed-to-add-pipeline">
+<h3>Error: External API returned an error: Failed to add pipeline<a class="headerlink" href="#error-external-api-returned-an-error-failed-to-add-pipeline" title="Permalink to this heading"></a></h3>
+</section>
+<section id="error-cant-test-this-pipeline-because-there-is-a-pipeline-with-the-same-name">
+<h3>Error: Can’t test this pipeline because there is a pipeline with the same name<a class="headerlink" href="#error-cant-test-this-pipeline-because-there-is-a-pipeline-with-the-same-name" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong> You may come across this error when trying to deploy a local pipeline for testing with the same name as a previously deployed pipeline.</p></li>
+<li><p><strong>Possible Solution:</strong> Edit the pipeline, give it a unique name and try to deploy the pipeline for testing again.</p></li>
+</ul>
+</section>
+<section id="error-sql-query-contains-tblname-parameter-but-table-name-is-empty">
+<h3>Error: Sql query contains {tblName} parameter but table name is empty<a class="headerlink" href="#error-sql-query-contains-tblname-parameter-but-table-name-is-empty" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong> You may come across this error when trying to extract schema with an empty table</p></li>
+<li><p><strong>Possible Solution:</strong> Extract the table or schema that is not empty</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pipelines.html" class="btn btn-neutral float-left" title="Pipelines in Flare" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pipelinepending.html" class="btn btn-neutral float-right" title="Pipeline Pending Approval" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Musheeza.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipeline Pending Approval &mdash; ligadata  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Published Pipeline in Flare" href="publishedpipeline.html" />
+    <link rel="prev" title="Local Pipeline" href="localpipeline.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ligadata
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overviewflare.html">Flare Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workspace.html">Workspace &amp; Local Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelines.html">Pipelines in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localpipeline.html">Local Pipeline</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pipeline Pending Approval</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-pipeline">Test Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#approve-or-decline-pipeline">Approve or Decline Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#error-cant-approve-a-pipeline-in-testing">Error: Can’t approve a pipeline in testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-please-undeploy-pipeline-before-approving">Error: Please undeploy pipeline before approving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-incompatible-environment-can-t-deploy-pipeline">Error: Incompatible environment, can’t deploy pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-invalid-connection-name">Error: Invalid connection name</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="publishedpipeline.html">Published Pipeline in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployedpipeline.html">Deployed Pipelines in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelinetesting.html">Pipelines in Testing In Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schemas in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories.html">Categories in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users.html">User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendixa.html">Appendix A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendixb.html">Appendix B</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ligadata</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Pipeline Pending Approval</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/pipelinepending.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pipeline-pending-approval">
+<span id="pipelinepending"></span><h1>Pipeline Pending Approval<a class="headerlink" href="#pipeline-pending-approval" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>The pending pipelines view within LigaData Flare displays a list of pipelines that have been created and are pending approval.</p>
+<p>The following are the potential source of pending pipelines that are displayed in the screenshot below:</p>
+<ul class="simple">
+<li><p><strong>Local Pipelines:</strong> The locally created pipelines for which the publication request is received is listed here</p></li>
+<li><p><strong>Pipelines in Testing:</strong> The undeployed pipelines put into test from the pending pipelines section are listed back here.</p></li>
+</ul>
+<p>To access the pending pipelines section, select <strong>Pipelines Pending Approval</strong> from the main menu. The following view will appear on the screen.</p>
+<figure class="align-center">
+<img alt="_images/pipelinependingapprove.png" src="_images/pipelinependingapprove.png" />
+</figure>
+</section>
+<section id="test-pipeline">
+<h2>Test Pipeline<a class="headerlink" href="#test-pipeline" title="Permalink to this heading"></a></h2>
+<p>LigaData Flare provides the ability to test your local pipelines directly from the workspace or from the pipelines pending approval page. Doing so, allows you to verify if the pipeline is running as expected and anything that might be offtrack can be identified immediately.</p>
+<p>To put a pending pipeline to test, follow the steps below:</p>
+<ol class="arabic">
+<li><p>Click on the <strong>Test</strong> button under the <strong>Actions</strong> column, corresponding to the pipeline to be tested. A dialog box will appear on the screen.</p></li>
+<li><p>Configure the following values for testing:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><strong>Version:</strong> Select the pipeline version</p></li>
+<li><p><strong>Environment:</strong> Select the staging environment in which the pipeline needs to be tested. This is a critical step as it will define the connections, caches and the parameters that the pipeline can utilize.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<p>3. Once done, hit the <strong>Deploy</strong> button.
+The pipeline will be moved to the Pipelines in Testing page.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>For more information, refer to the <a class="reference internal" href="pipelinetesting.html#pipelinetesting"><span class="std std-ref">Pipelines in Testing</span></a> section.</p>
+</div>
+</section>
+<section id="approve-or-decline-pipeline">
+<h2>Approve or Decline Pipeline<a class="headerlink" href="#approve-or-decline-pipeline" title="Permalink to this heading"></a></h2>
+<p>To approve or decline a pipeline, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the Details button under the Actions column, corresponding to the pipeline to be approved or declined. A dialog box will appear on the screen with the following information:</p></li>
+</ol>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>User Name</p></td>
+<td><p>Name of the pipeline creator</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pipeline Name</p></td>
+<td><p>Name of the pipeline. Clicking on the <strong>View</strong> button takes you to the non editable mode of the pipeline designer.</p></td>
+</tr>
+<tr class="row-even"><td><p>Email</p></td>
+<td><p>Email of the pipeline creator</p></td>
+</tr>
+<tr class="row-odd"><td><p>Request Date</p></td>
+<td><p>Timestamp for when the request was submitted</p></td>
+</tr>
+<tr class="row-even"><td><p>User Note</p></td>
+<td><p>Note typed by the pipeline creator at the time of submitting approval request</p></td>
+</tr>
+<tr class="row-odd"><td><p>Note</p></td>
+<td><p>Note to be included when approving or declining a pipeline publication request.</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="2">
+<li><p>In the <strong>Note</strong> field, type a brief note on why the pipeline is being approved or declined.</p></li>
+<li><p>Click on <strong>Approve</strong> or <strong>Decline</strong> as per your use case. A dialog box will appear on the screen.</p></li>
+<li><p>Select <strong>Confirm</strong> to proceed.</p></li>
+</ol>
+<p>If <strong>approved</strong>, the pipeline will be moved to the Published Pipelines page and if declined, the pipeline will be moved back to the Local Pipelines page.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>For more information, refer to the <a class="reference internal" href="publishedpipeline.html#publishedpipeline"><span class="std std-ref">Published Pipelines</span></a> section.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
+<p>While working with the pipelines pending approval, you might come across some errors while performing certain actions. In this section, you will see the errors associated with the pipelines pending approval along with the remediation steps.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>The error messages mentioned in this section are set by default and can be modified by editing the JSON file. To customize the error messages, refer to the <a class="reference internal" href="Appendixb.html#appendixb"><span class="std std-ref">Appendix B Customization</span></a></p>
+</div>
+<section id="error-cant-approve-a-pipeline-in-testing">
+<h3>Error: Can’t approve a pipeline in testing<a class="headerlink" href="#error-cant-approve-a-pipeline-in-testing" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong>  You may come across this error when trying to approve a local pipeline in testing stage.</p></li>
+<li><p><strong>Possible Solution:</strong> Stop the pipeline from testing and undeploy it to bring it back to the pipelines pending approval page.</p></li>
+</ul>
+</section>
+<section id="error-please-undeploy-pipeline-before-approving">
+<h3>Error: Please undeploy pipeline before approving<a class="headerlink" href="#error-please-undeploy-pipeline-before-approving" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong>  You may come across this error when trying to approve a local pipeline in testing stage.</p></li>
+<li><p><strong>Possible Solution:</strong> Undeploy the pipeline and try to approve the pipeline again.</p></li>
+</ul>
+</section>
+<section id="error-incompatible-environment-can-t-deploy-pipeline">
+<h3>Error: Incompatible environment, can’t deploy pipeline<a class="headerlink" href="#error-incompatible-environment-can-t-deploy-pipeline" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong> You may come across this error when trying to approve a local pipeline with environment settings not configured properly</p></li>
+<li><p><strong>Possible Solution:</strong> Edit the relevant environment and fix any misconfigurations.</p></li>
+</ul>
+</section>
+<section id="error-invalid-connection-name">
+<h3>Error: Invalid connection name<a class="headerlink" href="#error-invalid-connection-name" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong> You may come across this error when trying to approve a local pipeline with environment settings not configured properly</p></li>
+<li><p><strong>Possible Solution:</strong> Edit the relevant environment and fix the connection name.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="localpipeline.html" class="btn btn-neutral float-left" title="Local Pipeline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="publishedpipeline.html" class="btn btn-neutral float-right" title="Published Pipeline in Flare" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Musheeza.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

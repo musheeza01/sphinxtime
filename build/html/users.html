@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Management &mdash; ligadata  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Workflows" href="workflows.html" />
+    <link rel="prev" title="Roles" href="roles.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ligadata
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overviewflare.html">Flare Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workspace.html">Workspace &amp; Local Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelines.html">Pipelines in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localpipeline.html">Local Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelinepending.html">Pipeline Pending Approval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publishedpipeline.html">Published Pipeline in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployedpipeline.html">Deployed Pipelines in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelinetesting.html">Pipelines in Testing In Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schemas in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories.html">Categories in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-ldap-user">Add LDAP User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-new-user">Add New User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#activate-deactivate-user">Activate / Deactivate User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edit-user">Edit User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-user">Delete User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#error-username-already-exists">Error: Username already exists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendixa.html">Appendix A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendixb.html">Appendix B</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ligadata</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>User Management</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/users.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="user-management">
+<span id="users"></span><h1>User Management<a class="headerlink" href="#user-management" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>The category page within LigaData Flare allows you to manage users and their permissions. It provides the ability to associate the user with roles with predefined permissions so you do not have to manually edit the permissions for each role.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>For detailed information on setting roles and permissions, refer to the Roles <a class="reference internal" href="roles.html#roles"><span class="std std-ref">Roles</span></a> section.</p>
+</div>
+<figure class="align-center">
+<img alt="_images/newrole.png" src="_images/newrole.png" />
+</figure>
+</section>
+<section id="add-ldap-user">
+<h2>Add LDAP User<a class="headerlink" href="#add-ldap-user" title="Permalink to this heading"></a></h2>
+<p>To add an LDAP user, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the <strong>+ Add LDAP User</strong> button located at the top right corner of the UI. A dialog box will appear on the screen.</p></li>
+<li><p>Provide the following information:</p></li>
+</ol>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 91%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Click on the dropdown and select the user name to be added</p></td>
+</tr>
+<tr class="row-odd"><td><p>Role</p></td>
+<td><p>Click on the dropdown and select the role to be assigned to the LDAP user</p></td>
+</tr>
+</tbody>
+</table>
+<p>3. Click on the <strong>Add</strong> button to proceed.
+The user will be added and assigned the selected role successfully.</p>
+</section>
+<section id="add-new-user">
+<span id="addnewuser"></span><h2>Add New User<a class="headerlink" href="#add-new-user" title="Permalink to this heading"></a></h2>
+<p>To add a new user, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the <strong>+ Add New User</strong> button located at the top right corner of the UI. A dialog box will appear on the screen.</p></li>
+<li><p>Provide the following information:</p></li>
+</ol>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Specify the user name</p></td>
+</tr>
+<tr class="row-odd"><td><p>Password</p></td>
+<td><p>Specify the password.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Note</dt><dd><ul class="simple">
+<li><p>Password length must be between 8 and 128 characters</p></li>
+<li><p>Password must contain at least 1 upper case letter, 1 lower case letter, 1 number, 1 special character, and without whitespaces</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>Confirm Password</p></td>
+<td><p>Re-enter the password.</p></td>
+</tr>
+<tr class="row-odd"><td><p>First Name</p></td>
+<td><p>Specify the first name of the user</p></td>
+</tr>
+<tr class="row-even"><td><p>Last Name</p></td>
+<td><p>Specify the last name of the user</p></td>
+</tr>
+<tr class="row-odd"><td><p>Email</p></td>
+<td><p>Specify the user’s email</p></td>
+</tr>
+<tr class="row-even"><td><p>Role</p></td>
+<td><p>Click on the dropdown and select the role to be assigned to the user</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Note</dt><dd><ul class="simple">
+<li><p>The user role assigned to the user must be activated.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Categories</p></td>
+<td><p>Click on the dropdown and select the category to be assigned to the user. Multiple categories can be assigned.</p></td>
+</tr>
+</tbody>
+</table>
+<p>3. Click on the <strong>Add</strong> button to proceed.
+The user will be added and assigned the selected role successfully.</p>
+<figure class="align-center">
+<img alt="_images/newuser.png" src="_images/newuser.png" />
+</figure>
+<figure class="align-center">
+<img alt="_images/usererror.png" src="_images/usererror.png" />
+</figure>
+</section>
+<section id="activate-deactivate-user">
+<h2>Activate / Deactivate User<a class="headerlink" href="#activate-deactivate-user" title="Permalink to this heading"></a></h2>
+<p>To <strong>activate</strong> a user, tick the checkbox under the <strong>Actions</strong> column, corresponding to the user to be activated. A dialog box will appear on the screen to confirm the deactivation. Select <strong>Confirm</strong> to proceed. The user will be activated.</p>
+<p>Similarly, to <strong>deactivate</strong> the user, untick the checkbox. A dialog box will appear on the screen to confirm the deactivation. Select <strong>Confirm</strong> to proceed. The user will be deactivated.</p>
+</section>
+<section id="edit-user">
+<h2>Edit User<a class="headerlink" href="#edit-user" title="Permalink to this heading"></a></h2>
+<p>To edit a user, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the edit icon under the Actions column, corresponding to the user to be edited. A dialog box will appear on the screen.</p></li>
+<li><p>Make the required changes.</p></li>
+</ol>
+<p>3. Click on the Save button to proceed.
+The user will be edited successfully.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>For information on what these fields mean, refer to the <a class="reference internal" href="#addnewuser"><span class="std std-ref">Add New User</span></a> section.</p>
+</div>
+</section>
+<section id="delete-user">
+<h2>Delete User<a class="headerlink" href="#delete-user" title="Permalink to this heading"></a></h2>
+<p>To delete a user, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Click on the delete icon under the Actions column, corresponding to the user to be deleted. A dialog box will appear on the screen.</p></li>
+</ol>
+<p>2. Select Confirm to proceed.
+The user will be deleted successfully.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To view the deleted users, click on the <strong>Show Deleted Users</strong> button located at the top right corner of the UI. The deleted users will appear in the list.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
+<section id="error-username-already-exists">
+<h3>Error: Username already exists<a class="headerlink" href="#error-username-already-exists" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Root Cause:</strong> You may come across this error when trying to enter a username that already exists.</p></li>
+<li><p><strong>Possible Solution:</strong> Try entering a unique username.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="roles.html" class="btn btn-neutral float-left" title="Roles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="workflows.html" class="btn btn-neutral float-right" title="Workflows" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Musheeza.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

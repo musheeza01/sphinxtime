@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipelines in Flare &mdash; ligadata  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Local Pipeline" href="localpipeline.html" />
+    <link rel="prev" title="Workspace &amp; Local Pipeline" href="workspace.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ligadata
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overviewflare.html">Flare Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workspace.html">Workspace &amp; Local Pipeline</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pipelines in Flare</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="localpipeline.html">Local Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelinepending.html">Pipeline Pending Approval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publishedpipeline.html">Published Pipeline in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployedpipeline.html">Deployed Pipelines in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelinetesting.html">Pipelines in Testing In Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Schemas in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories.html">Categories in Flare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users.html">User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendixa.html">Appendix A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Appendixb.html">Appendix B</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ligadata</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Pipelines in Flare</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/pipelines.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pipelines-in-flare">
+<span id="pipelines"></span><h1>Pipelines in Flare<a class="headerlink" href="#pipelines-in-flare" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>A Pipeline within LigaData Flare provides a visual representation of data flow passing through multiple steps and processes from data sources to destination systems.</p>
+<p>It offers an end-to-end pipeline management capability that allows you to define how data should be processed at each stage and configure the settings for each origin, processor and destination node. Data pipelines can also make decisions or update states of system entities based on incoming data.</p>
+<p>The image below shows the lifecycle of a typical pipeline created on LigaData Flare along with the various possible use cases.</p>
+<figure class="align-center">
+<img alt="_images/pipelineflare.png" src="_images/pipelineflare.png" />
+</figure>
+<p>The pipeline views can be accessed from the main menu, by clicking on the LigaData Flare logo located at the top left corner of the screen.</p>
+<p>A brief description of each is shared below:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Section</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Workspace &amp; Local Pipeline</p></td>
+<td><p>Lets you create a workspace that can be used to create local pipelines within it.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pending Pipeline Approval</p></td>
+<td><p>Lets you view the list of pipeline publication requests, put the pipeline for testing, approve or reject the request. The approved pipelines will be moved to the published pipelines page.</p></td>
+</tr>
+<tr class="row-even"><td><p>Published Pipelines</p></td>
+<td><p>Lets you view the list of approved pipelines ready to be deployed into the environment of your choice.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Deployed Pipelines</p></td>
+<td><p>Lets you pause and resume a running pipeline, along with the ability to view the pipeline specific stats.</p></td>
+</tr>
+<tr class="row-even"><td><p>Pipelines in Testing</p></td>
+<td><p>Lets you test the validity of the pipelines requiring approval, by deploying them to a test environment.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All pipelines are associated with a workspace. Hence, it is mandatory to create a workspace before creating a pipeline. For more information, refer to the <a class="reference internal" href="workspace.html#workspace"><span class="std std-ref">Workspace</span></a> section.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="workspace.html" class="btn btn-neutral float-left" title="Workspace &amp; Local Pipeline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="localpipeline.html" class="btn btn-neutral float-right" title="Local Pipeline" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Musheeza.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
